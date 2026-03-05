@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullahi Bagana - Virtual Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--cream:#f7f3ec;--gold:#c9a84c;--gold-light:#e8d5a3;--muted:#7a7060;--white:#ffffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.6}
+header{background:var(--ink);color:var(--cream);padding:60px 60px 50px;position:relative;overflow:hidden}
+.header-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;position:relative;z-index:1}
+.label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500}
+h1{font-family:"Playfair Display",serif;font-size:clamp(38px,6vw,64px);font-weight:900;line-height:1;color:var(--white)}
+h1 span{color:var(--gold)}
+.tagline{margin-top:16px;font-size:15px;color:rgba(247,243,236,0.65);max-width:360px;font-weight:300}
+.contact-block{text-align:right}
+.contact-block a{display:block;color:var(--gold-light);text-decoration:none;font-size:13px;margin-bottom:6px}
+.availability{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);padding:6px 14px;border-radius:20px;font-size:12px;color:var(--gold-light)}
+.dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+main{max-width:900px;margin:0 auto;padding:60px 60px 80px}
+.intro{border-left:3px solid var(--gold);padding-left:24px;margin-bottom:60px}
+.intro p{font-size:16px;color:#3a3530;line-height:1.8}
+section{margin-bottom:56px}
+.section-title{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.section-title::after{content:"";flex:1;height:1px;background:linear-gradient(to right,var(--gold-light),transparent)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.service-card{background:var(--white);border:1px solid #e8e2d9;border-radius:12px;padding:22px 20px}
+.service-icon{font-size:24px;margin-bottom:10px}
+.service-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.service-desc{font-size:12px;color:var(--muted);line-height:1.5}
+.tools-wrap{display:flex;flex-wrap:wrap;gap:10px}
+.tool-tag{background:var(--white);border:1px solid #e0d9ce;border-radius:6px;padding:7px 16px;font-size:13px;color:#3a3530}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.why-card{display:flex;gap:14px;align-items:flex-start;background:var(--white);border-radius:12px;padding:20px;border:1px solid #e8e2d9}
+.why-num{font-family:"Playfair Display",serif;font-size:32px;font-weight:900;color:var(--gold-light);line-height:1;flex-shrink:0}
+.why-text strong{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px}
+.why-text p{font-size:12px;color:var(--muted);line-height:1.5}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pkg-card{border-radius:14px;padding:28px 22px;border:1px solid #e8e2d9;background:var(--white);position:relative}
+.pkg-card.featured{background:var(--ink);border-color:var(--gold);color:var(--cream)}
+.pkg-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:10px}
+.pkg-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500}
+.pkg-price{font-family:"Playfair Display",serif;font-size:36px;font-weight:900;line-height:1;margin-bottom:4px}
+.pkg-card.featured .pkg-price{color:var(--white)}
+.pkg-period{font-size:12px;color:var(--muted);margin-bottom:18px}
+.pkg-card.featured .pkg-period{color:rgba(247,243,236,0.5)}
+.pkg-features{list-style:none}
+.pkg-features li{font-size:13px;color:#3a3530;padding:5px 0;display:flex;align-items:center;gap:8px}
+.pkg-card.featured .pkg-features li{color:rgba(247,243,236,0.8)}
+.pkg-features li::before{content:"✓";color:var(--gold);font-weight:700;font-size:12px}
+.cta{background:var(--ink);border-radius:20px;padding:48px 40px;text-align:center}
+.cta h2{font-family:"Playfair Display",serif;font-size:32px;color:var(--white);margin-bottom:12px}
+.cta p{color:rgba(247,243,236,0.6);font-size:15px;margin-bottom:28px}
+.cta-btn{display:inline-block;background:var(--gold);color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:14px 36px;border-radius:8px}
+footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-top:1px solid #e8e2d9}
+@media(max-width:600px){.packages-grid{grid-template-columns:1fr}main{padding:40px 24px 60px}header{padding:40px 24px 36px}.contact-block{text-align:left}.header-inner{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="name-block">
+<div class="label">Virtual Assistant Portfolio</div>
+<h1>Abdullahi<br><span>Bagana</span></h1>
+<p class="tagline">Helping busy entrepreneurs and business owners reclaim their time — remotely, reliably, and professionally.</p>
+</div>
+<div class="contact-block">
+<a id="el1" href="#">&#128139; abdullahibagana.va@gmail.com</a>
+<a href="#">&#128279; linkedin.com/in/abdullahibagana</a>
+<a href="#">&#128188; upwork.com/fl/abdullahibagana</a>
+<a href="#">&#127919; fiverr.com/abdullahibagana</a>
+<div class="availability"><span class="dot"></span>Available for new clients</div>
+</div>
+</div>
+</header>
+<main>
+<div class="intro"><p>I am a professional General Virtual Assistant based in Nigeria, fluent in English, and experienced in helping entrepreneurs, small business owners, and busy professionals manage their operations smoothly. I bring reliability, attention to detail, and proactive communication to every project — so you can focus on growing your business while I handle the rest.</p></div>
+<section>
+<h2 class="section-title">Services I Offer</h2>
+<div class="services-grid">
+<div class="service-card"><div class="service-icon">&#128139;</div><div class="service-name">Email Management</div><div class="service-desc">Inbox organization, filtering, drafting replies, and follow-ups</div></div>
+<div class="service-card"><div class="service-icon">&#128197;</div><div class="service-name">Calendar &amp; Scheduling</div><div class="service-desc">Appointment booking, meeting coordination, and reminders</div></div>
+<div class="service-card"><div class="service-icon">&#128269;</div><div class="service-name">Research &amp; Data Entry</div><div class="service-desc">Market research, competitor analysis, data organization</div></div>
+<div class="service-card"><div class="service-icon">&#128172;</div><div class="service-name">Customer Support</div><div class="service-desc">Responding to inquiries, handling complaints, live chat support</div></div>
+<div class="service-card"><div class="service-icon">&#128247;</div><div class="service-name">Social Media Scheduling</div><div class="service-desc">Post scheduling, content calendar management, engagement</div></div>
+<div class="service-card"><div class="service-icon">&#128202;</div><div class="service-name">Reporting &amp; Admin</div><div class="service-desc">Creating reports, spreadsheets, presentations, and documents</div></div>
+</div>
+</section>
+<section>
+<h2 class="section-title">Tools &amp; Platforms</h2>
+<div class="tools-wrap">
+<span class="tool-tag">Gmail</span><span class="tool-tag">Google Calendar</span><span class="tool-tag">Google Docs</span><span class="tool-tag">Google Sheets</span><span class="tool-tag">Zoom</span><span class="tool-tag">Calendly</span><span class="tool-tag">Trello</span><span class="tool-tag">Notion</span><span class="tool-tag">Asana</span><span class="tool-tag">Canva</span><span class="tool-tag">Slack</span><span class="tool-tag">ChatGPT</span><span class="tool-tag">Microsoft Office</span><span class="tool-tag">WhatsApp Business</span>
+</div>
+</section>
+<section>
+<h2 class="section-title">Why Work With Me</h2>
+<div class="why-grid">
+<div class="why-card"><div class="why-num">01</div><div class="why-text"><strong>Fast Response Time</strong><p>I respond promptly and keep you updated at every step of the task.</p></div></div>
+<div class="why-card"><div class="why-num">02</div><div class="why-text"><strong>High Attention to Detail</strong><p>Nothing slips through the cracks. Every task is handled with precision.</p></div></div>
+<div class="why-card"><div class="why-num">03</div><div class="why-text"><strong>Fluent English</strong><p>Clear, professional written and verbal communication at all times.</p></div></div>
+<div class="why-card"><div class="why-num">04</div><div class="why-text"><strong>100% Remote Ready</strong><p>Fully equipped to work across time zones with reliable internet access.</p></div></div>
+</div>
+</section>
+<section>
+<h2 class="section-title">Service Packages</h2>
+<div class="packages-grid">
+<div class="pkg-card"><div class="pkg-name">Starter</div><div class="pkg-price">$10</div><div class="pkg-period">one-time / basic task</div><ul class="pkg-features"><li>5 admin tasks</li><li>1-day delivery</li><li>Email support</li><li>1 revision</li></ul></div>
+<div class="pkg-card featured"><div class="pkg-badge">Most Popular</div><div class="pkg-name">Professional</div><div class="pkg-price">$25</div><div class="pkg-period">per project / 3 days</div><ul class="pkg-features"><li>15 admin tasks</li><li>3-day delivery</li><li>Priority support</li><li>3 revisions</li></ul></div>
+<div class="pkg-card"><div class="pkg-name">Premium</div><div class="pkg-price">$60</div><div class="pkg-period">weekly retainer</div><ul class="pkg-features"><li>Unlimited tasks</li><li>7-day support</li><li>Daily check-ins</li><li>Unlimited revisions</li></ul></div>
+</div>
+</section>
+<section>
+<div class="cta">
+<h2>Ready to Work Together?</h2>
+<p>Let us take the admin burden off your plate so you can focus on what truly matters.</p>
+<a href="mailto:abdullahibagana.va@gmail.com" class="cta-btn">&#128235; Get in Touch Today</a>
+</div>
+</section>
+</main>
+<footer>&#169; 2026 Abdullahi Bagana &middot; Virtual Assistant &middot; abdullahibagana.va@gmail.com &middot; Available Worldwide</footer>
+</body>
+  </html>
